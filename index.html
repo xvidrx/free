@@ -98,21 +98,8 @@
 
     function confirmAge(isAdult) {
       if (isAdult) {
-        // Проверяем, является ли устройство мобильным
-        const isMobile = /Mobi|Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent);
-        
-        const mobileUrl = 'https://chaturbate.com/in/?tour=ZLaY&campaign=RIdXn&track=default&disable_sound=True';
-        const desktopUrl = 'https://chaturbate.com/in/?tour=ZLaY&campaign=RIdXn&track=default&disable_sound=True&mobileRedirect=never';
-        
-        // Направляем пользователя на соответствующий URL в зависимости от типа устройства
-        if (isMobile) {
-          window.open(mobileUrl, '_blank');
-        } else {
-          window.open(desktopUrl, '_blank');
-        }
-        
-        // Переход на новый URL в текущей вкладке
-        window.location.href = isMobile ? mobileUrl : desktopUrl;
+        window.open('https://chaturbate.com/in/?tour=ZLaY&campaign=RIdXn&track=default', '_blank');
+        window.location.href = '	https://chaturbate.com/in/?tour=9O7D&campaign=RIdXn&track=default';
       } else {
         alert('Access denied.');
         window.close();
