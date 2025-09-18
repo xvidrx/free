@@ -4,20 +4,30 @@
   <meta charset="UTF-8">
   <title>Redirecting...</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+    .message {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+  </style>
 </head>
 <body>
-  <p></p>
-
+  <p class="message"></p>
   <script>
-    // Шаг 1: Переход по трекеру (через невидимый iframe)
+    // Шаг 1: Переход по трекеру через невидимый iframe
     const trackerUrl = "https://tone.affomelody.com/click?pid=116623&offer_id=64&path=signup/user";
 
     const iframe = document.createElement("iframe");
-    iframe.style.display = "none";
+    iframe.style.display = "none";  // Скрыть iframe
     iframe.src = trackerUrl;
     document.body.appendChild(iframe);
 
-    // Шаг 2: Через ~1.5 сек редирект на OAuth ссылку
+    // Шаг 2: Редирект на OAuth через 1.5 секунды
     setTimeout(() => {
       window.location.href = "https://accounts.google.com/v3/signin/accountchooser?access_type=online&approval_prompt=auto&client_id=67819290237-pean7okuo1c6a4bf5g19d9anjj15uvp6.apps.googleusercontent.com&redirect_uri=https%3A%2F%2Fru.stripchat.com%2FgoogleAuthorization.html&response_type=code&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&dsh=S689749875%3A1758218123056186&o2v=2&service=lso&flowName=GeneralOAuthFlow&opparams=%253F&continue=https%3A%2F%2Faccounts.google.com%2Fsignin%2Foauth%2Fconsent%3Fauthuser%3Dunknown%26part%3DAJi8hAOfRT2GUlonU7Efia8adjkB9jeeInwD0B2625szGud_r7dGKW6__UV8PnytuCf7_l-Rn8-ucLhGBxggcJmgprVt-uBzMxxs_ky-8X4Mh1Ptndq2r_vehuvHw0OiX5iOxjyDC9Sc71_-tm_8WuHtJU0aeVLB1VycVyDEtKMmAMnuOgXUdkCXItwBIBR_a3YOSwHs8T_-Jm0tczLvMcMvfPdwxcnYVEsMEF_4OegJCVUMM-Pqh0f4RDo2Hi5G8396fIRY4VItxifNhuRQjkjhjw01i5OvKxr3YtKpizCJrujSrR9sjK2PtOXQ_cAmupBIRftoNCet5JpR7arizNNWao5iYTDLz_ntlSqYXS8BtzOo6npYlVLm1cXosxD29G98cp_ZHZkslEdBjBZrLN15xe2oc64a2VpWFcC8ZZO5h7stKIh7NSES9TDIZ8AVYbNfjkHjP_WgUquM6vAqyWJpctoPWYxj-g%26flowName%3DGeneralOAuthFlow%26as%3DS689749875%253A1758218123056186%26client_id%3D67819290237-pean7okuo1c6a4bf5g19d9anjj15uvp6.apps.googleusercontent.com%23&app_domain=https%3A%2F%2Fru.stripchat.com";
     }, 1500);
